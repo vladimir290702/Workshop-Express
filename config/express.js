@@ -10,6 +10,9 @@ function setupExpress(app) {
     
     app.use(express.static('public'));
     
+    app.use(express.urlencoded({
+        extended: true,
+    }))
 };
 
 module.exports = setupExpress;
