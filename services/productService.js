@@ -9,7 +9,7 @@ function getAll() {
     return productsData;
 }
 
-function create(data) {
+function create(data, callback) {
     let cube = new Cube(
         uniqid(),
         data.name,
@@ -19,11 +19,12 @@ function create(data) {
     );
     productsData.push(cube);
 
-    fs.writeFile(path.join(__dirname, '/../config/products.json'), JSON.stringify(productsData), (err) => {
-        if (err) {
-            return err;
-        }
-    })
+    fs.writeFile(
+        path.join(__dirname, '/../config/products.json'),
+        JSON.stringify(productsData),
+        callback()
+    );
+
 }
 
 function getOne(id) {
