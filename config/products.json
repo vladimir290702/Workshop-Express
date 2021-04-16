@@ -1,16 +1,1 @@
-[
-    {
-        "id": "1v019m4knkodhip",
-        "name": "Cube",
-        "description": "cool",
-        "imageUrl": "https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg",
-        "level": "3"
-    },
-    {
-        "id": "1v01394knkoeua6",
-        "name": "Vladi",
-        "description": "asdsad",
-        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-oNioR1OicpNuHFBGXLogFpVyWpmAUv3BXw&usqp=CAU",
-        "level": "1"
-    }
-]
+[{"id":"1v019m4knkodhip","name":"Cube","description":"cool","imageUrl":"https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/cube_icon_kjijxo.jpg","level":"3"},{"id":"1v01394knkoeua6","name":"Vladi","description":"asdsad","imageUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-oNioR1OicpNuHFBGXLogFpVyWpmAUv3BXw&usqp=CAU","level":"1"},{"id":"1v018msknkp7xpc","name":"cube111","description":"wwoooooow","imageUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJMVsxySAfOvrmrVRx1ki9GUKMB1e2mi0KRf0NUOqPK84Mbh3ZWx8UaC-VxMvKJccfibQ&usqp=CAU","level":"3"}]

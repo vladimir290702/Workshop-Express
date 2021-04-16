@@ -19,13 +19,19 @@ function create(data) {
     );
     productsData.push(cube);
 
-    fs.writeFile(__dirname + '/../config/products.json', JSON.stringify(productsData), (err) => {
+    fs.writeFile(path.join(__dirname, '/../config/products.json'), JSON.stringify(productsData), (err) => {
         if (err) {
             return err;
         }
     })
 }
 
+function getOne(id) {
+    return productsData.find(x => x.id == id);
+}
+
+
+
 module.exports = {
-    create, getAll
+    create, getAll, getOne,
 }
