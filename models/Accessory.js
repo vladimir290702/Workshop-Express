@@ -1,9 +1,11 @@
-const Model = require("./Model");
+const mongoose = require('mongoose');
 
-class Accessory extends Model {
-    constructor() {
-        super();
-    }
-}
 
-module.exports = Accessory
+const accessoryScheme = new mongoose.Schema({
+    id: mongoose.Types.ObjectId,
+    name: String,
+    imageUrl: String,
+    description: String,
+});
+
+module.exports = mongoose.model('Accessory', accessoryScheme);

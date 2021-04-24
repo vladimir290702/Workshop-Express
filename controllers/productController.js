@@ -5,31 +5,28 @@ const { validateProduct } = require('./helpers/productHelpers');
 const router = Router();
 
 router.get('/', (req, res) => {
-
-    let products = productService.getAll(req.query);
-
-    res.render('home', { title: 'Browse', products });
-})
+    productService.getAll(req.query)
+        .then(products => {
+            res.render('home', { title: 'Browse', products });
+        })
+        .catch(() => res.status(500).end());
+});
 
 router.get('/create', (req, res) => {
     res.render('create', { title: 'Create' });
-})
+});
 
 router.post('/create', validateProduct, (req, res) => {
-    // Validate inputs:
-    productService.create(req.body, (err) => {
-        if (err) {
-            return res.status(500).end();
-        }
+    productService.create(req.body)
+        .then(() => res.redirect('/products'))
+        .catch(() => res.status(500).end())
+});
 
-        res.redirect('/products');
-    });
-})
+router.get('/details/:productId', async (req, res) => {
+    let product = await productService.getOne(req.params.productId);
 
-router.get('/details/:id', (req, res) => {
-    const id = req.params.id;
-    let product = productService.getOne(id);
-    res.render('details', { title: 'Details', product });
-})
+    res.render('details', { title: 'Product Details', product })
+});
 
 module.exports = router;
+

@@ -11,7 +11,7 @@ class Model {
             JSON.stringify(productsDb),
         );
     }
-
+    
     static getAll() {
         return productsDb;
     }
