@@ -24,16 +24,16 @@ router.post('/create', validateProduct, (req, res) => {
 });
 
 router.get('/details/:productId', async (req, res) => {
-    let product = await productService.getOne(req.params.productId)
+    let product = await productService.getOneWithAccessories(req.params.productId);
 
     res.render('details',{title: 'Product Details', product})
 });
 
 router.get('/:productId/attach', async (req, res) => {
     let product = await productService.getOne(req.params.productId);
-    let accessories = await accessoryService.getAll();
-    
-    res.render('attachAccessory');
+    let accessories = await accessoryService.getAllUnattached(product.accessories);
+
+    res.render('attachAccessory', {product, accessories});
 });
 
 router.post('/:productId/attach', (req, res) => {

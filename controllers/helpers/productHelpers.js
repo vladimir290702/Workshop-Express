@@ -1,15 +1,13 @@
-
-// NAMED EXPORT
-
-exports.validateProduct = function (req, res, next) {
-
+exports.validateProduct = function(req, res, next) {
     let isValid = true;
+    
     if (req.body.name.trim().length < 2) {
-        isValid = false;
+        isValid = false
     } else if(!req.body.imageUrl) {
-        isValid = false;
+        isValid = false
     }
-    if(isValid) {
+
+    if (isValid) {
         next();
     }
 }
